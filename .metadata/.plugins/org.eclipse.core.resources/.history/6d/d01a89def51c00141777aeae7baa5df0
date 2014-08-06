@@ -1,0 +1,30 @@
+package org.data.BasedEntities;
+
+import java.util.ArrayList;
+
+public class UserLst {
+	
+	private ArrayList<User> userLst;
+	
+	public UserLst(ArrayList<User> userLst) {
+		super();
+		this.userLst = userLst;
+	}
+	
+	public void newUser(User usr){
+		this.userLst.add(usr);
+	}
+	
+	public boolean hasUser(User usr){
+		return this.userLst.contains(usr);
+	}
+
+	public ArrayList<User> getUserLst() {
+		return userLst;
+	}
+
+	public void setUserLst(ArrayList<User> userLst) {
+		this.userLst = userLst;
+	}
+
+}

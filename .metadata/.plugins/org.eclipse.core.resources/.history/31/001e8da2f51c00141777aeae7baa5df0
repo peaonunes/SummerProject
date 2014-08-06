@@ -1,0 +1,8 @@
+package org.data.BasedEntities;
+
+public class UserLst {
+	
+	private ArrayList<User> userLst;
+	
+
+}

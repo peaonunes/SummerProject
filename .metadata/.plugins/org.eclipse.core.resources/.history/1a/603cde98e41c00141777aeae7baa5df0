@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package BasedEntities;
+
+/**
+ * @author peaonunes
+ *
+ */
+public class Category {
+	
+	private String text;
+	
+	
+
+}

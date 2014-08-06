@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package BasedEntities;
+
+/**
+ * @author peaonunes
+ *
+ */
+public class Comment {
+	private 
+	private String text
+}

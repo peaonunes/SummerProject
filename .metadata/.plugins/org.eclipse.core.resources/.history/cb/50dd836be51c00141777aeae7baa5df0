@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package BasedEntities;
+
+/**
+ * @author peaonunes
+ * Each Comment has the text which is the content of the comment.
+ */
+public class Comment {
+	
+	private String text;
+	private int userID;
+	
+	public Comment(String text) {
+		super();
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+	
+}

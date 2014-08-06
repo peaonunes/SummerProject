@@ -1,0 +1,9 @@
+package org.IO.InputExtractor;
+
+public class PreFormatador {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

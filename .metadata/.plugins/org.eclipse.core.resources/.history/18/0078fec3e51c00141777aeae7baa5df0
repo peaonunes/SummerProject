@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package BasedEntities;
+
+/**
+ * @author peaonunes
+ *
+ */
+public class User {
+	
+	private int ID;
+	private ArrayList<Comment> commentsLst;
+	
+	
+
+}
