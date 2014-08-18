@@ -1,0 +1,18 @@
+package org.data.BasedEntities;
+
+public class WorkEntitie {
+	
+	private UserLst userLst;
+	
+	public WorkEntitie(UserLst userLst) {
+		this.userLst = userLst;
+	}
+
+	public UserLst getUserLst() {
+		return userLst;
+	}
+	public void setUserLst(UserLst userLst) {
+		this.userLst = userLst;
+	}
+	
+}

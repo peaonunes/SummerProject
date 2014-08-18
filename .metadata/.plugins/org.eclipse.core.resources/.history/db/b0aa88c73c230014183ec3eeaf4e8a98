@@ -1,0 +1,33 @@
+package org.data.BasedEntities;
+
+import java.util.ArrayList;
+
+public class CategoryLst {
+	
+	private ArrayList<Category> CategoryLst;
+	
+	public CategoryLst() {
+		this.CategoryLst = new ArrayList<Category>();
+	}
+	
+	public void newCategory(Category usr){
+		this.CategoryLst.add(usr);
+	}
+	
+	public boolean hasCategory(Category usr){
+		return this.CategoryLst.contains(usr);
+	}
+	
+	public boolean removeCategory(Category usr){
+		return this.CategoryLst.remove(usr);
+	}
+
+	public ArrayList<Category> getCategoryLst() {
+		return CategoryLst;
+	}
+
+	public void setCategoryLst(ArrayList<Category> CategoryLst) {
+		this.CategoryLst = CategoryLst;
+	}
+
+}

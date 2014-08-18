@@ -14,11 +14,12 @@ public class User {
 	
 	private int ID;
 	private ArrayList<Comment> commentsLst;
-	
-	public User(int iD, ArrayList<Comment> commentsLst) {
-		super();
+	private ArrayList<Category> categoryLst;
+
+	public User(int iD) {
 		this.ID = iD;
-		this.commentsLst = commentsLst;
+		this.commentsLst = new ArrayList<Comment>();
+		this.categoryLst = new ArrayList<Category>();
 	}
 
 	public int getID() {
@@ -35,6 +36,36 @@ public class User {
 	
 	public void setCommentsLst(ArrayList<Comment> commentsLst) {
 		this.commentsLst = commentsLst;
+	}
+	
+	public ArrayList<Category> getCategoryLst() {
+		return categoryLst;
+	}
+
+	public void setCategoryLst(ArrayList<Category> categoryLst) {
+		this.categoryLst = categoryLst;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ID;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (ID != other.ID)
+			return false;
+		return true;
 	}
 
 }

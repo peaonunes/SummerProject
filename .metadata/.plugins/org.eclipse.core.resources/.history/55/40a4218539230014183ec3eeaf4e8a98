@@ -1,0 +1,28 @@
+package org.data.BasedEntities;
+
+import java.util.ArrayList;
+
+public class WorkEntitie {
+	
+	private CategoryLst catLst;
+	private UserLst userLst;
+	
+	public WorkEntitie(CategoryLst catLst, UserLst userLst) {
+		super();
+		this.catLst = catLst;
+		this.userLst = userLst;
+	}
+	public ArrayList<Category> getCatLst() {
+		return catLst;
+	}
+	public void setCatLst(ArrayList<Category> catLst) {
+		this.catLst = catLst;
+	}
+	public UserLst getUserLst() {
+		return userLst;
+	}
+	public void setUserLst(UserLst userLst) {
+		this.userLst = userLst;
+	}
+	
+}

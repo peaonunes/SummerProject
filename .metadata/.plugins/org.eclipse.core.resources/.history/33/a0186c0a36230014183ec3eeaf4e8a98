@@ -1,0 +1,10 @@
+package org.data.BasedEntities;
+
+import java.util.ArrayList;
+
+public class WorkEntitie {
+	
+	private ArrayList<Category> catLst;
+	private UserLst userLst;
+	
+}
