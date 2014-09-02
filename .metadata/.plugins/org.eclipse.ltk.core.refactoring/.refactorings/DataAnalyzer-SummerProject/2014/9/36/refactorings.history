@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;userLst&apos; in &apos;org.data.BasedEntities.WorkEntitie&apos; to &apos;userRepo&apos;&#x0A;- Original project: &apos;DataAnalyzer-SummerProject&apos;&#x0A;- Original element: &apos;org.data.BasedEntities.WorkEntitie.userLst&apos;&#x0A;- Renamed element: &apos;org.data.BasedEntities.WorkEntitie.userRepo&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;userLst&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;org.data.BasedEntities{WorkEntitie.java[WorkEntitie^userLst" name="userRepo" references="true" setter="false" stamp="1409621366526" textual="false" version="1.0"/>
+</session>

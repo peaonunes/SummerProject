@@ -4,13 +4,20 @@
 package org.IO;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+
 import org.data.BasedEntities.Category;
 import org.data.BasedEntities.Comment;
 import org.data.BasedEntities.User;
-import org.data.BasedEntities.UserLst;
+import org.data.BasedEntities.UserRepository;
+import org.data.BasedEntities.WorkEntitie;
 
 /**
  * @author peaonunes
@@ -41,18 +48,18 @@ import org.data.BasedEntities.UserLst;
 public class InputReader {
 	
 	private BufferedReader reader;
-	private UserLst userLst;
+	private WorkEntitie workEntitie;
 	
 	public InputReader() {
-		this.userLst = new UserLst();
+		this.workEntitie = new WorkEntitie();
 	}
 
-	public UserLst getUserLst() {
-		return userLst;
+	public WorkEntitie getWorkEntitie() {
+		return workEntitie;
 	}
 
-	public void setUserLst(UserLst userLst) {
-		this.userLst = userLst;
+	public void setWorkEntitie(WorkEntitie workEntitie) {
+		this.workEntitie = workEntitie;
 	}
 
 	public BufferedReader getReader() {
@@ -85,30 +92,42 @@ public class InputReader {
 				String text = data[4];
 				
 				User usr = new User(usrID);
-				User auxiliary = this.userLst.hasUser(usr);
+				User auxiliary = this.workEntitie.getUserLst().hasUser(usr);
 				
 				if(auxiliary != null){
-					if(commentType == 2){
-						usr.getCategoryLst().add(new Category(text, commentID, usrID, parentID));
-					} else if (commentType == 1){
-						usr.getCommentsLst().add(new Comment(text, commentID, usrID, parentID));
-					}
-					this.userLst.getUserLst().add(usr);
+					this.addText(commentType, commentID, usrID, parentID, text, usr);
+					this.workEntitie.getUserLst().getUserLst().add(usr);
 				} else {
-					/*
-					 * PROBLEM
-					 */
+					this.addText(commentType, commentID, usrID, parentID, text, auxiliary);
 				}
-				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
+	private void addText(int commentType, int commentID, int usrID, int parentID, String text, User usr) {
+		if(commentType == 2){
+			usr.getCategoryLst().add(new Category(text, commentID, usrID, parentID));
+		} else if (commentType == 1){
+			usr.getCommentsLst().add(new Comment(text, commentID, usrID, parentID));
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		InputReader reader = new InputReader();
 		reader.readFile("Input.txt");
+		
+		File out = new File("Debug.txt");
+		try {
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out), "UTF-8"));
+			
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

@@ -83,5 +83,12 @@ public class Comment {
 			return false;
 		return true;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Comment [text=" + text + ", ID=" + ID + ", userID=" + userID
+				+ ", parentID=" + parentID + "]";
+	}
 	
 }
